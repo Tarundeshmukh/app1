@@ -20,7 +20,12 @@ export class UserformComponent implements OnInit {
   }
 
   save(){
-    this.userService.createUser(this.user)
+
+    const observable =  this.userService.createUser(this.user)
+    observable.subscribe(response => {
+      console.log(response);
+      
+    })
     console.log("Hello user!");
     console.log(this.user.name);
     
