@@ -5,7 +5,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  createUser(user:{name:string;age:number;gender:string;}){
+  createUser(user:{
+    name:string;
+    age:number;
+    gender:string;}){
     return this.http.post("http://localhost:3000/users", user)
   }
   constructor(public http: HttpClient) { }
