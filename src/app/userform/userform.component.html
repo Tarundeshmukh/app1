@@ -1,12 +1,12 @@
 <h1>userform works!</h1>
 <input type="text" [(ngModel)]="user.name">
 <input type="number" [(ngModel)]="user.age">
-<input type="radio" [(ngModel)]="user.gender" value="Male">Male
-<input type="radio" [(ngModel)]="user.gender" value="Female">Female
+<input type="radio" [(ngModel)]="user.gender" value="male" name="gender">Male
+<input type="radio" [(ngModel)]="user.gender" value="female" name="gender">Female
 <button (click)="save()">Save</button>
 
 <ol>
-    <li *ngFor="let user of users">
-        {{user.name}
+    <li *ngFor='let user of users; index as i'>
+        {{user.name}},  {{user.age}}<button (click)='deleteRow(user, i)'> delete</button>
     </li>
 </ol>
