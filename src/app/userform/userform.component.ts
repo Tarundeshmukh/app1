@@ -13,11 +13,13 @@ export class UserformComponent implements OnInit {
   }
 
   user = {
-    name:"Tarun"
+    name:"Tarun",
+    age:24
   }
 
   save(){
     console.log("Hello user!");
+    console.log(this.user.name);
     
   }
 }
