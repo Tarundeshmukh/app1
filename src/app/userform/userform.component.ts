@@ -9,6 +9,9 @@ import { HttpResponse } from '@angular/common/http'
 })
 export class UserformComponent implements OnInit {
 
+  isOpen=false
+  subjects:any[]=[]
+
   constructor(public userService:UserService) { }
 
   ngOnInit(): void {
@@ -17,7 +20,8 @@ export class UserformComponent implements OnInit {
   user = {
     name:"Tarun",
     age:24,
-    gender:"Male"
+    gender:"Male",
+    dob:new Date()
   }
   users=[];
 
@@ -30,7 +34,7 @@ export class UserformComponent implements OnInit {
   }
 
   save(){
-
+    this.user.dob= new Date(this.user.dob)
     const observable =  this.userService.createUser(this.user)
     observable.subscribe((response:any) => {
       console.log(response);
