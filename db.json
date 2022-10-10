@@ -4,5 +4,12 @@
     "Arts",
     "Maths"
   ],
-  "users": []
+  "users": [
+    {
+      "name": "Tarun",
+      "age": 24,
+      "gender": "male",
+      "id": 1
+    }
+  ]
 }

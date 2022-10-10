@@ -5,8 +5,24 @@
 <input type="radio" [(ngModel)]="user.gender" value="female" name="gender">Female
 <button (click)="save()">Save</button>
 
-<ol>
+<!-- <ol>
     <li *ngFor='let user of users; index as i'>
-        {{user.name}},  {{user.age}}<button (click)='deleteRow(user, i)'> delete</button>
+        {{user.name}},  {{user.age}}  <button (click)='deleteRow(user, i)'> delete</button>
     </li>
-</ol>
+</ol> -->
+
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">DOB</th>
+    </thead>
+    <tbody >
+        <tr *ngFor='let user of users; index as i'>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.dob | date}}</td>
+            <td><button (click)='deleteRow(user, i)'> delete</button></td>
+        </tr>
+    </tbody>
+</table>
